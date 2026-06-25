@@ -6,6 +6,9 @@ const layout = JSON.parse(fs.readFileSync("src/layout.json", "utf8"));
 const styles = fs.readFileSync("src/styles.css", "utf8");
 const client = fs.readFileSync("src/client.js", "utf8");
 const GA_MEASUREMENT_ID = "G-RSVR6Y389R";
+const GA_PAGE_TITLE = "frankstop/MindMap";
+const GA_PAGE_PATH = "/MindMap/";
+const GA_PAGE_LOCATION = "https://frankstop.github.io/MindMap/";
 
 fs.mkdirSync("site", { recursive: true });
 fs.mkdirSync("exports", { recursive: true });
@@ -24,7 +27,7 @@ function renderHtml() {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>${escapeHtml(data.metadata.title)}</title>
+  <title>${escapeHtml(GA_PAGE_TITLE)}</title>
   ${googleAnalyticsTag()}
   <link rel="stylesheet" href="./styles.css">
 </head>
@@ -195,7 +198,11 @@ function googleAnalyticsTag() {
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', '${GA_MEASUREMENT_ID}');
+    gtag('config', '${GA_MEASUREMENT_ID}', {
+      page_title: '${GA_PAGE_TITLE}',
+      page_path: '${GA_PAGE_PATH}',
+      page_location: '${GA_PAGE_LOCATION}'
+    });
   </script>`;
 }
 

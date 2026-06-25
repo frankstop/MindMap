@@ -51,7 +51,8 @@ The generated site includes the Google tag in `site/index.html` through `src/bui
 
 - Measurement ID: `G-RSVR6Y389R`
 - Script source: `https://www.googletagmanager.com/gtag/js?id=G-RSVR6Y389R`
-- Config call: `gtag('config', 'G-RSVR6Y389R')`
+- Page title sent to GA: `frankstop/MindMap`
+- Page path sent to GA: `/MindMap/`
 
 After the GitHub Pages deploy finishes, confirm the property in Google Analytics:
 
@@ -61,7 +62,8 @@ After the GitHub Pages deploy finishes, confirm the property in Google Analytics
 4. Open Data Streams and choose the web stream.
 5. Confirm the stream URL matches the MindMap GitHub Pages URL.
 6. Open Reports > Realtime.
-7. Visit the deployed MindMap page in a browser and confirm one active user appears.
+7. In the Realtime card, change the dimension from `Country` to `Page title and screen name`.
+8. Visit the deployed MindMap page in a browser and confirm `frankstop/MindMap` appears.
 
 If the stream URL is still pointed at another project, keep the same measurement ID only if this site should report into that shared property. Create a new web stream if MindMap needs separate reporting.
 
