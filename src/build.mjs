@@ -5,6 +5,7 @@ const data = JSON.parse(fs.readFileSync("data/mind-map-snapshot.json", "utf8"));
 const layout = JSON.parse(fs.readFileSync("src/layout.json", "utf8"));
 const styles = fs.readFileSync("src/styles.css", "utf8");
 const client = fs.readFileSync("src/client.js", "utf8");
+const GA_MEASUREMENT_ID = "G-RSVR6Y389R";
 
 fs.mkdirSync("site", { recursive: true });
 fs.mkdirSync("exports", { recursive: true });
@@ -24,6 +25,7 @@ function renderHtml() {
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>${escapeHtml(data.metadata.title)}</title>
+  ${googleAnalyticsTag()}
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -185,6 +187,16 @@ function networkIcon() {
 
 function searchIcon() {
   return `<svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="#64748b" stroke-width="2"/><path d="M16.5 16.5L21 21" fill="none" stroke="#64748b" stroke-width="2" stroke-linecap="round"/></svg>`;
+}
+
+function googleAnalyticsTag() {
+  return `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '${GA_MEASUREMENT_ID}');
+  </script>`;
 }
 
 function escapeHtml(value) {

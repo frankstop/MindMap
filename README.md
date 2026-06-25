@@ -45,6 +45,26 @@ npm run check
 
 Open `site/index.html` in a browser after building.
 
+## Google Analytics + gtag
+
+The generated site includes the Google tag in `site/index.html` through `src/build.mjs`.
+
+- Measurement ID: `G-RSVR6Y389R`
+- Script source: `https://www.googletagmanager.com/gtag/js?id=G-RSVR6Y389R`
+- Config call: `gtag('config', 'G-RSVR6Y389R')`
+
+After the GitHub Pages deploy finishes, confirm the property in Google Analytics:
+
+1. Open Google Analytics.
+2. Go to Admin.
+3. Select the property that owns `G-RSVR6Y389R`.
+4. Open Data Streams and choose the web stream.
+5. Confirm the stream URL matches the MindMap GitHub Pages URL.
+6. Open Reports > Realtime.
+7. Visit the deployed MindMap page in a browser and confirm one active user appears.
+
+If the stream URL is still pointed at another project, keep the same measurement ID only if this site should report into that shared property. Create a new web stream if MindMap needs separate reporting.
+
 ## Design Intent
 
 The first screen should read as a designed information product:
