@@ -1,36 +1,65 @@
-# MindMap
+# Codex Memory Map
 
-This repo is a local snapshot of what Codex memory says about Frank Valdez, his recurring work, and his computer workflows.
+A source-backed map of work patterns, career direction, and recurring systems.
 
-It is not a visualization of AI model weights. It is a source-backed concept map built from Codex memory notes only.
+![Codex Memory Map preview](exports/mind-map-snapshot.svg)
 
-## Files
+## What This Is
 
-- `data/mind-map-snapshot.json`: the structured source data.
-- `site/index.html`: the interactive local map and report.
-- `exports/mind-map-snapshot.svg`: the frozen visual snapshot.
+This is a public portfolio artifact built from Codex memory notes. It shows how recurring work areas connect across career direction, repos, workflows, preferences, risks, and browser-openable outputs.
 
-## How To Open
+The artifact is designed to show information design and repo hygiene, not private raw source material.
 
-Open `site/index.html` in a browser.
+## Source Boundary
 
-The page is self-contained, so it does not need a local server. The JSON file is still included separately so another tool or agent can reuse the same dataset.
+Included:
 
-## Source Scope
+- Topic labels, summaries, and evidence references from `MEMORY.md`.
+- Cluster and relationship metadata authored for public reading.
+- A deterministic visual layout for the interactive map and SVG export.
 
-Source used:
+Excluded:
 
-- `/Users/poweruser/.codex/memories/MEMORY.md`
+- Secrets, API keys, payment data, identity document text, and raw personal document contents.
+- Absolute local filesystem paths.
+- Live repo, job-board, or deployed-site claims that would need fresh verification.
 
-Not used:
+## Project Structure
 
-- Personal document contents.
-- Secrets, API keys, payment data, identity document text, or raw private files.
-- Live repo, job-board, or deployed-site checks.
+- `data/mind-map-snapshot.json`: the source dataset.
+- `src/layout.json`: deterministic graph positions and cluster territories.
+- `src/styles.css`: shared visual system for the generated site.
+- `src/client.js`: browser interaction logic.
+- `src/build.mjs`: generates `site/` and the SVG export.
+- `src/validate.mjs`: checks data integrity and public-path leakage.
+- `site/`: generated interactive site.
+- `exports/mind-map-snapshot.svg`: generated static preview.
 
-## Reading The Map
+## Commands
 
-- Bigger circles are more central topics.
-- Lines show relationships pulled from memory notes.
-- The side panel in the HTML shows why each topic exists and where the evidence came from.
-- Some live facts may become stale. Check current repos, deployments, and job postings before acting on the map.
+```bash
+npm run validate
+npm run build
+npm run check
+```
+
+Open `site/index.html` in a browser after building.
+
+## Design Intent
+
+The first screen should read as a designed information product:
+
+- Frank Valdez is the central topic.
+- Career, repos, workflows, preferences, risks, and artifacts have visible territories.
+- Search is the primary control.
+- Filters and reset actions stay quiet.
+- Red is reserved for risk.
+- The inspector explains the selected topic with evidence lines.
+
+## Acceptance Checklist
+
+- `data/mind-map-snapshot.json` is the only maintained data source.
+- `site/index.html` and `exports/mind-map-snapshot.svg` are generated outputs.
+- The public UI and README contain no absolute local paths.
+- The SVG preview and interactive site tell the same story.
+- Search, cluster filtering, link filtering, reset, mouse selection, and keyboard selection work.

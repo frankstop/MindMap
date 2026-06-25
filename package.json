@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "node src/build.mjs",
+    "validate": "node src/validate.mjs",
+    "check": "npm run validate && npm run build && node --check site/app.js"
+  },
+  "devDependencies": {}
+}

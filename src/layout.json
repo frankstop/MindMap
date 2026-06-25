@@ -1,0 +1,170 @@
+{
+  "viewBox": [
+    0,
+    0,
+    1320,
+    820
+  ],
+  "territories": [
+    {
+      "id": "career",
+      "label": "Career",
+      "clusterIds": [
+        "cluster:career"
+      ],
+      "x": 50,
+      "y": 58,
+      "width": 330,
+      "height": 250,
+      "color": "#dcfce7"
+    },
+    {
+      "id": "repos",
+      "label": "Repos",
+      "clusterIds": [
+        "cluster:repos"
+      ],
+      "x": 760,
+      "y": 58,
+      "width": 360,
+      "height": 295,
+      "color": "#dbeafe"
+    },
+    {
+      "id": "workflows",
+      "label": "Workflows",
+      "clusterIds": [
+        "cluster:resume",
+        "cluster:skills"
+      ],
+      "x": 52,
+      "y": 410,
+      "width": 365,
+      "height": 300,
+      "color": "#ede9fe"
+    },
+    {
+      "id": "preferences",
+      "label": "Preferences",
+      "clusterIds": [
+        "cluster:preferences"
+      ],
+      "x": 445,
+      "y": 575,
+      "width": 330,
+      "height": 150,
+      "color": "#fef3c7"
+    },
+    {
+      "id": "risks",
+      "label": "Risks",
+      "clusterIds": [
+        "cluster:computer"
+      ],
+      "x": 820,
+      "y": 400,
+      "width": 295,
+      "height": 180,
+      "color": "#fee2e2"
+    },
+    {
+      "id": "artifacts",
+      "label": "Artifacts",
+      "clusterIds": [
+        "cluster:artifacts"
+      ],
+      "x": 795,
+      "y": 615,
+      "width": 285,
+      "height": 145,
+      "color": "#cffafe"
+    }
+  ],
+  "nodes": {
+    "person:frank": {
+      "x": 620,
+      "y": 390,
+      "radius": 98
+    },
+    "goal:business-systems-automation": {
+      "x": 195,
+      "y": 138,
+      "radius": 66
+    },
+    "evidence:seasonal-operations": {
+      "x": 205,
+      "y": 238,
+      "radius": 62
+    },
+    "repo:portfolio": {
+      "x": 950,
+      "y": 255,
+      "radius": 62
+    },
+    "repo:personal-cafe": {
+      "x": 910,
+      "y": 128,
+      "radius": 62
+    },
+    "repo:job-boards": {
+      "x": 930,
+      "y": 192,
+      "radius": 62
+    },
+    "workflow:resume": {
+      "x": 190,
+      "y": 475,
+      "radius": 60
+    },
+    "workflow:github-pages": {
+      "x": 200,
+      "y": 565,
+      "radius": 60
+    },
+    "workflow:skill-creation": {
+      "x": 192,
+      "y": 655,
+      "radius": 60
+    },
+    "preference:direct-proof-first": {
+      "x": 560,
+      "y": 652,
+      "radius": 58
+    },
+    "preference:scope-discipline": {
+      "x": 690,
+      "y": 655,
+      "radius": 58
+    },
+    "preference:plain-language": {
+      "x": 336,
+      "y": 290,
+      "radius": 56
+    },
+    "workflow:cover-letter": {
+      "x": 385,
+      "y": 515,
+      "radius": 56
+    },
+    "risk:stale-live-state": {
+      "x": 958,
+      "y": 495,
+      "radius": 64
+    },
+    "workflow:filesystem-triage": {
+      "x": 108,
+      "y": 338,
+      "radius": 56
+    },
+    "artifact:static-html": {
+      "x": 928,
+      "y": 690,
+      "radius": 62
+    },
+    "tool:understand-anything": {
+      "x": 1110,
+      "y": 675,
+      "radius": 56
+    }
+  }
+}

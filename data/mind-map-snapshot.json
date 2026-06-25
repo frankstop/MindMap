@@ -1,26 +1,69 @@
 {
   "metadata": {
-    "title": "Codex Memory Mind Map Snapshot",
+    "title": "Codex Memory Map",
     "createdAt": "2026-06-24",
-    "sourceScope": "Codex memory only",
+    "sourceScope": "Codex memory notes only",
     "sourceFiles": [
-      "/Users/poweruser/.codex/memories/MEMORY.md"
+      "MEMORY.md"
     ],
     "limits": [
       "This is a source-backed map of memory notes, not a scan of model weights or hidden reasoning.",
       "Personal document contents, secrets, payment data, identity document text, and API keys are intentionally excluded.",
       "Some facts can become stale. Re-check live repos, jobs, and deployed sites before acting on them."
-    ]
+    ],
+    "subtitle": "A source-backed map of work patterns, career direction, and recurring systems.",
+    "publicPosture": "Public portfolio artifact with local paths and private raw contents redacted.",
+    "designIntent": "Show how recurring work patterns, career direction, workflows, risks, and artifacts connect without exposing private source contents."
   },
   "clusters": [
-    { "id": "cluster:profile", "label": "Profile", "color": "#1d4ed8" },
-    { "id": "cluster:preferences", "label": "Preferences", "color": "#475569" },
-    { "id": "cluster:career", "label": "Career", "color": "#0f766e" },
-    { "id": "cluster:repos", "label": "Repos", "color": "#7c3aed" },
-    { "id": "cluster:resume", "label": "Resume", "color": "#b45309" },
-    { "id": "cluster:computer", "label": "Computer", "color": "#be123c" },
-    { "id": "cluster:skills", "label": "Skills", "color": "#047857" },
-    { "id": "cluster:artifacts", "label": "Artifacts", "color": "#0369a1" }
+    {
+      "id": "cluster:profile",
+      "label": "Profile",
+      "color": "#2563eb",
+      "description": "Central subject and public framing."
+    },
+    {
+      "id": "cluster:preferences",
+      "label": "Preferences",
+      "color": "#d97706",
+      "description": "Working preferences that shape outputs."
+    },
+    {
+      "id": "cluster:career",
+      "label": "Career",
+      "color": "#16a34a",
+      "description": "Career direction and supporting evidence."
+    },
+    {
+      "id": "cluster:repos",
+      "label": "Repos",
+      "color": "#2563eb",
+      "description": "Public and recurring project areas."
+    },
+    {
+      "id": "cluster:resume",
+      "label": "Workflows",
+      "color": "#7c3aed",
+      "description": "Repeatable document and publishing flows."
+    },
+    {
+      "id": "cluster:computer",
+      "label": "Risks",
+      "color": "#dc2626",
+      "description": "Areas needing caution or freshness checks."
+    },
+    {
+      "id": "cluster:skills",
+      "label": "Workflows",
+      "color": "#7c3aed",
+      "description": "Reusable systems and tool-building practices."
+    },
+    {
+      "id": "cluster:artifacts",
+      "label": "Artifacts",
+      "color": "#0891b2",
+      "description": "Browser-openable outputs and exports."
+    }
   ],
   "nodes": [
     {
@@ -32,9 +75,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "474-477", "note": "Resume workflow is explicitly tied to Frank Valdez." },
-        { "source": "MEMORY.md", "lines": "570-573", "note": "Career support notes are tied to the user's evidence and goals." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "474-477",
+          "note": "Resume workflow is explicitly tied to Frank Valdez."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "570-573",
+          "note": "Career support notes are tied to the user's evidence and goals."
+        }
+      ],
+      "publicLabel": "Frank Valdez",
+      "displayLabel": [
+        "Frank",
+        "Valdez"
+      ],
+      "weight": 1,
+      "risk": false
     },
     {
       "id": "preference:direct-proof-first",
@@ -45,9 +103,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "382-385", "note": "For personal-cafe, feasibility and simple explanation come before implementation detail." },
-        { "source": "MEMORY.md", "lines": "450-453", "note": "For live-site fixes, runtime proof matters more than source-only checks." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "382-385",
+          "note": "For personal-cafe, feasibility and simple explanation come before implementation detail."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "450-453",
+          "note": "For live-site fixes, runtime proof matters more than source-only checks."
+        }
+      ],
+      "publicLabel": "Answer first, prove it",
+      "displayLabel": [
+        "Answer First",
+        "Prove It"
+      ],
+      "weight": 0.55,
+      "risk": false
     },
     {
       "id": "preference:scope-discipline",
@@ -58,9 +131,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "386-391", "note": "The user distinguishes inspection, planning, and implementation." },
-        { "source": "MEMORY.md", "lines": "206-215", "note": "Portfolio work was corrected when the work changed style or scope." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "386-391",
+          "note": "The user distinguishes inspection, planning, and implementation."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "206-215",
+          "note": "Portfolio work was corrected when the work changed style or scope."
+        }
+      ],
+      "publicLabel": "Stay in scope",
+      "displayLabel": [
+        "Stay",
+        "In Scope"
+      ],
+      "weight": 0.55,
+      "risk": false
     },
     {
       "id": "goal:business-systems-automation",
@@ -71,8 +159,19 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "72-83", "note": "Memory names the target label and fuller positioning." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "72-83",
+          "note": "Memory names the target label and fuller positioning."
+        }
+      ],
+      "publicLabel": "Business Systems Automation",
+      "displayLabel": [
+        "Business Systems",
+        "Automation"
+      ],
+      "weight": 0.82,
+      "risk": false
     },
     {
       "id": "evidence:seasonal-operations",
@@ -83,8 +182,19 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "590-593", "note": "The memory note gives the exact seasonal split and scope." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "590-593",
+          "note": "The memory note gives the exact seasonal split and scope."
+        }
+      ],
+      "publicLabel": "Seasonal operations evidence",
+      "displayLabel": [
+        "Seasonal",
+        "Operations"
+      ],
+      "weight": 0.55,
+      "risk": false
     },
     {
       "id": "repo:portfolio",
@@ -95,9 +205,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "139-152", "note": "Task group defines the portfolio scope and stack." },
-        { "source": "MEMORY.md", "lines": "204-227", "note": "Preferences and reusable knowledge define edit style and proof paths." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "139-152",
+          "note": "Task group defines the portfolio scope and stack."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "204-227",
+          "note": "Preferences and reusable knowledge define edit style and proof paths."
+        }
+      ],
+      "publicLabel": "frankstop/Portfolio",
+      "displayLabel": [
+        "Portfolio",
+        "Site"
+      ],
+      "weight": 0.72,
+      "risk": false
     },
     {
       "id": "repo:personal-cafe",
@@ -108,9 +233,23 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "307-348", "note": "Task group covers product work, map work, manual location, and sharing." },
-        { "source": "MEMORY.md", "lines": "380-408", "note": "Preferences and reusable knowledge define repo workflow." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "307-348",
+          "note": "Task group covers product work, map work, manual location, and sharing."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "380-408",
+          "note": "Preferences and reusable knowledge define repo workflow."
+        }
+      ],
+      "publicLabel": "personal-cafe",
+      "displayLabel": [
+        "personal-cafe"
+      ],
+      "weight": 0.72,
+      "risk": false
     },
     {
       "id": "repo:job-boards",
@@ -121,9 +260,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "599-624", "note": "Memory groups these as job-board and proposal work." },
-        { "source": "MEMORY.md", "lines": "697-713", "note": "Reusable knowledge gives source policy, Pages, and app patterns." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "599-624",
+          "note": "Memory groups these as job-board and proposal work."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "697-713",
+          "note": "Reusable knowledge gives source policy, Pages, and app patterns."
+        }
+      ],
+      "publicLabel": "Job-board projects",
+      "displayLabel": [
+        "Job-board",
+        "Projects"
+      ],
+      "weight": 0.7,
+      "risk": false
     },
     {
       "id": "workflow:github-pages",
@@ -134,9 +288,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "423-463", "note": "Repo init and Pages enablement notes define the workflow." },
-        { "source": "MEMORY.md", "lines": "689-711", "note": "Job-board notes show repo-vs-live verification patterns." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "423-463",
+          "note": "Repo init and Pages enablement notes define the workflow."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "689-711",
+          "note": "Job-board notes show repo-vs-live verification patterns."
+        }
+      ],
+      "publicLabel": "GitHub Pages publishing",
+      "displayLabel": [
+        "GitHub Pages",
+        "Checks"
+      ],
+      "weight": 0.68,
+      "risk": false
     },
     {
       "id": "workflow:resume",
@@ -147,9 +316,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "474-489", "note": "Task group defines resume workflow scope." },
-        { "source": "MEMORY.md", "lines": "532-553", "note": "Preferences define filenames, templates, page-count checks, and evidence handling." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "474-489",
+          "note": "Task group defines resume workflow scope."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "532-553",
+          "note": "Preferences define filenames, templates, page-count checks, and evidence handling."
+        }
+      ],
+      "publicLabel": "Resume workflow",
+      "displayLabel": [
+        "Resume",
+        "Workflow"
+      ],
+      "weight": 0.7,
+      "risk": false
     },
     {
       "id": "workflow:cover-letter",
@@ -160,9 +344,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "491-500", "note": "Memory frames cover-letter judgment around requirements." },
-        { "source": "MEMORY.md", "lines": "539-544", "note": "Preferences enforce claim boundaries and attachment-specific evidence." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "491-500",
+          "note": "Memory frames cover-letter judgment around requirements."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "539-544",
+          "note": "Preferences enforce claim boundaries and attachment-specific evidence."
+        }
+      ],
+      "publicLabel": "Requirement-first cover letters",
+      "displayLabel": [
+        "Cover",
+        "Letters"
+      ],
+      "weight": 0.55,
+      "risk": false
     },
     {
       "id": "workflow:filesystem-triage",
@@ -173,8 +372,19 @@
       "confidence": "high",
       "privacyLevel": "sensitive-category",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "242-268", "note": "Memory describes tree.txt triage and the privacy-sensitive document categories." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "242-268",
+          "note": "Memory describes tree.txt triage and the privacy-sensitive document categories."
+        }
+      ],
+      "publicLabel": "Filesystem triage",
+      "displayLabel": [
+        "Filesystem",
+        "Triage"
+      ],
+      "weight": 0.55,
+      "risk": true
     },
     {
       "id": "workflow:skill-creation",
@@ -185,9 +395,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "735-764", "note": "Task group covers local skills, Understand-Anything, indexing, and exports." },
-        { "source": "MEMORY.md", "lines": "776-793", "note": "Preferences and reusable knowledge define skill workflow rules." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "735-764",
+          "note": "Task group covers local skills, Understand-Anything, indexing, and exports."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "776-793",
+          "note": "Preferences and reusable knowledge define skill workflow rules."
+        }
+      ],
+      "publicLabel": "Skill creation and validation",
+      "displayLabel": [
+        "Skill",
+        "Creation"
+      ],
+      "weight": 0.55,
+      "risk": false
     },
     {
       "id": "tool:understand-anything",
@@ -198,9 +423,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "754-764", "note": "Memory names install, knowledge graph, direct links, and JSON export work." },
-        { "source": "MEMORY.md", "lines": "790-791", "note": "Memory describes it as a plugin suite and notes direct filesystem indexes." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "754-764",
+          "note": "Memory names install, knowledge graph, direct links, and JSON export work."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "790-791",
+          "note": "Memory describes it as a plugin suite and notes direct filesystem indexes."
+        }
+      ],
+      "publicLabel": "Understand-Anything",
+      "displayLabel": [
+        "Understand-",
+        "Anything"
+      ],
+      "weight": 0.55,
+      "risk": false
     },
     {
       "id": "artifact:static-html",
@@ -211,9 +451,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "938-953", "note": "Memory describes static presentation and local HTML artifacts." },
-        { "source": "MEMORY.md", "lines": "967-977", "note": "Memory says local HTML plus localStorage can be enough for quick tools." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "938-953",
+          "note": "Memory describes static presentation and local HTML artifacts."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "967-977",
+          "note": "Memory says local HTML plus localStorage can be enough for quick tools."
+        }
+      ],
+      "publicLabel": "Static HTML artifacts",
+      "displayLabel": [
+        "Static HTML",
+        "Artifacts"
+      ],
+      "weight": 0.55,
+      "risk": false
     },
     {
       "id": "preference:plain-language",
@@ -224,9 +479,24 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "384-385", "note": "Memory says to summarize in plain language for recipient-facing notes." },
-        { "source": "MEMORY.md", "lines": "539-540", "note": "Resume workflow notes call for exact, step-by-step instructions when needed." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "384-385",
+          "note": "Memory says to summarize in plain language for recipient-facing notes."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "539-540",
+          "note": "Resume workflow notes call for exact, step-by-step instructions when needed."
+        }
+      ],
+      "publicLabel": "Plain-language handoff",
+      "displayLabel": [
+        "Plain-language",
+        "Handoff"
+      ],
+      "weight": 0.55,
+      "risk": false
     },
     {
       "id": "risk:stale-live-state",
@@ -237,35 +507,386 @@
       "confidence": "high",
       "privacyLevel": "normal",
       "evidence": [
-        { "source": "MEMORY.md", "lines": "461-463", "note": "Pages can be enabled while the public site still lags." },
-        { "source": "MEMORY.md", "lines": "689-711", "note": "RemoteJob memory stresses live endpoint checks over source timestamps alone." }
-      ]
+        {
+          "source": "MEMORY.md",
+          "lines": "461-463",
+          "note": "Pages can be enabled while the public site still lags."
+        },
+        {
+          "source": "MEMORY.md",
+          "lines": "689-711",
+          "note": "RemoteJob memory stresses live endpoint checks over source timestamps alone."
+        }
+      ],
+      "publicLabel": "Stale live state risk",
+      "displayLabel": [
+        "Stale Live",
+        "State Risk"
+      ],
+      "weight": 0.67,
+      "risk": true
     }
   ],
   "edges": [
-    { "source": "person:frank", "target": "goal:business-systems-automation", "type": "aims_at", "label": "career positioning", "weight": 0.95, "evidence": [{ "source": "MEMORY.md", "lines": "72-83", "note": "Career target is named in reusable knowledge." }] },
-    { "source": "person:frank", "target": "repo:portfolio", "type": "owns_public_artifact", "label": "job-search portfolio", "weight": 0.9, "evidence": [{ "source": "MEMORY.md", "lines": "139-152", "note": "Portfolio repo is framed as a job-search artifact." }] },
-    { "source": "person:frank", "target": "workflow:resume", "type": "uses_workflow", "label": "resume builds", "weight": 0.9, "evidence": [{ "source": "MEMORY.md", "lines": "474-489", "note": "Resume workflow is recurring." }] },
-    { "source": "person:frank", "target": "repo:personal-cafe", "type": "works_on", "label": "product repo help", "weight": 0.85, "evidence": [{ "source": "MEMORY.md", "lines": "307-348", "note": "Memory lists multiple personal-cafe tasks." }] },
-    { "source": "person:frank", "target": "repo:job-boards", "type": "builds", "label": "job search tools", "weight": 0.85, "evidence": [{ "source": "MEMORY.md", "lines": "599-624", "note": "Job-board task group lists several related projects." }] },
-    { "source": "person:frank", "target": "evidence:seasonal-operations", "type": "has_evidence", "label": "seasonal operations proof", "weight": 0.8, "evidence": [{ "source": "MEMORY.md", "lines": "590-593", "note": "Career evidence is confirmed." }] },
-    { "source": "preference:direct-proof-first", "target": "workflow:github-pages", "type": "shapes", "label": "runtime checks", "weight": 0.9, "evidence": [{ "source": "MEMORY.md", "lines": "450-463", "note": "Live behavior must be checked." }] },
-    { "source": "preference:scope-discipline", "target": "repo:portfolio", "type": "constrains", "label": "preserve shell", "weight": 0.9, "evidence": [{ "source": "MEMORY.md", "lines": "204-215", "note": "Portfolio styling and content scope were corrected." }] },
-    { "source": "preference:scope-discipline", "target": "repo:personal-cafe", "type": "constrains", "label": "narrow patches", "weight": 0.85, "evidence": [{ "source": "MEMORY.md", "lines": "386-391", "note": "The user separates planning, inspection, and coding." }] },
-    { "source": "goal:business-systems-automation", "target": "workflow:resume", "type": "guides", "label": "resume positioning", "weight": 0.85, "evidence": [{ "source": "MEMORY.md", "lines": "72-83", "note": "Career target should guide positioning." }] },
-    { "source": "evidence:seasonal-operations", "target": "workflow:resume", "type": "supports", "label": "work evidence", "weight": 0.8, "evidence": [{ "source": "MEMORY.md", "lines": "590-593", "note": "Confirmed role split and responsibilities." }] },
-    { "source": "workflow:resume", "target": "workflow:cover-letter", "type": "feeds", "label": "claim boundary", "weight": 0.85, "evidence": [{ "source": "MEMORY.md", "lines": "539-544", "note": "Exact resume or attachment defines claims." }] },
-    { "source": "repo:portfolio", "target": "workflow:github-pages", "type": "published_by", "label": "static Pages site", "weight": 0.8, "evidence": [{ "source": "MEMORY.md", "lines": "220-223", "note": "Portfolio is a static GitHub Pages site." }] },
-    { "source": "repo:job-boards", "target": "workflow:github-pages", "type": "published_by", "label": "Pages workflow", "weight": 0.85, "evidence": [{ "source": "MEMORY.md", "lines": "697-707", "note": "Job-board repos use GitHub Pages and generated public data." }] },
-    { "source": "repo:job-boards", "target": "risk:stale-live-state", "type": "has_risk", "label": "freshness drift", "weight": 0.85, "evidence": [{ "source": "MEMORY.md", "lines": "689-711", "note": "Live data can lag behind repo updates." }] },
-    { "source": "workflow:github-pages", "target": "risk:stale-live-state", "type": "detects", "label": "check live endpoint", "weight": 0.9, "evidence": [{ "source": "MEMORY.md", "lines": "461-463", "note": "Pages state and public output can differ." }] },
-    { "source": "workflow:filesystem-triage", "target": "preference:direct-proof-first", "type": "uses", "label": "evidence-based filtering", "weight": 0.75, "evidence": [{ "source": "MEMORY.md", "lines": "257-268", "note": "Index triage needs concise evidence and extension filtering." }] },
-    { "source": "workflow:filesystem-triage", "target": "risk:stale-live-state", "type": "warns_about", "label": "rescan before acting", "weight": 0.7, "evidence": [{ "source": "MEMORY.md", "lines": "244-245", "note": "Machine-specific folder lists should be rescanned." }] },
-    { "source": "workflow:skill-creation", "target": "tool:understand-anything", "type": "uses_tool", "label": "knowledge graph tooling", "weight": 0.8, "evidence": [{ "source": "MEMORY.md", "lines": "754-764", "note": "Understand-Anything appears under skill and graph work." }] },
-    { "source": "tool:understand-anything", "target": "artifact:static-html", "type": "related_to", "label": "graph and export pattern", "weight": 0.65, "evidence": [{ "source": "MEMORY.md", "lines": "754-764", "note": "Graph and JSON export work existed before this package." }] },
-    { "source": "artifact:static-html", "target": "preference:plain-language", "type": "serves", "label": "readable local output", "weight": 0.75, "evidence": [{ "source": "MEMORY.md", "lines": "938-977", "note": "Local browser artifacts are a known useful output shape." }] },
-    { "source": "preference:plain-language", "target": "workflow:cover-letter", "type": "shapes", "label": "clear application materials", "weight": 0.75, "evidence": [{ "source": "MEMORY.md", "lines": "539-540", "note": "Resume workflows should include exact instructions when needed." }] },
-    { "source": "preference:direct-proof-first", "target": "workflow:resume", "type": "shapes", "label": "verify files", "weight": 0.85, "evidence": [{ "source": "MEMORY.md", "lines": "547-553", "note": "Resume artifacts need file-content and PDF verification." }] },
-    { "source": "repo:personal-cafe", "target": "risk:stale-live-state", "type": "has_risk", "label": "current code may drift", "weight": 0.65, "evidence": [{ "source": "MEMORY.md", "lines": "307-310", "note": "Memory says to re-verify current code before assuming architecture." }] }
+    {
+      "source": "person:frank",
+      "target": "goal:business-systems-automation",
+      "type": "aims_at",
+      "label": "career positioning",
+      "weight": 0.95,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "72-83",
+          "note": "Career target is named in reusable knowledge."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "person:frank",
+      "target": "repo:portfolio",
+      "type": "owns_public_artifact",
+      "label": "job-search portfolio",
+      "weight": 0.9,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "139-152",
+          "note": "Portfolio repo is framed as a job-search artifact."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "person:frank",
+      "target": "workflow:resume",
+      "type": "uses_workflow",
+      "label": "resume builds",
+      "weight": 0.9,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "474-489",
+          "note": "Resume workflow is recurring."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "person:frank",
+      "target": "repo:personal-cafe",
+      "type": "works_on",
+      "label": "product repo help",
+      "weight": 0.85,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "307-348",
+          "note": "Memory lists multiple personal-cafe tasks."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "person:frank",
+      "target": "repo:job-boards",
+      "type": "builds",
+      "label": "job search tools",
+      "weight": 0.85,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "599-624",
+          "note": "Job-board task group lists several related projects."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "person:frank",
+      "target": "evidence:seasonal-operations",
+      "type": "has_evidence",
+      "label": "seasonal operations proof",
+      "weight": 0.8,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "590-593",
+          "note": "Career evidence is confirmed."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "preference:direct-proof-first",
+      "target": "workflow:github-pages",
+      "type": "shapes",
+      "label": "runtime checks",
+      "weight": 0.9,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "450-463",
+          "note": "Live behavior must be checked."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "preference:scope-discipline",
+      "target": "repo:portfolio",
+      "type": "constrains",
+      "label": "preserve shell",
+      "weight": 0.9,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "204-215",
+          "note": "Portfolio styling and content scope were corrected."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "preference:scope-discipline",
+      "target": "repo:personal-cafe",
+      "type": "constrains",
+      "label": "narrow patches",
+      "weight": 0.85,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "386-391",
+          "note": "The user separates planning, inspection, and coding."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "goal:business-systems-automation",
+      "target": "workflow:resume",
+      "type": "guides",
+      "label": "resume positioning",
+      "weight": 0.85,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "72-83",
+          "note": "Career target should guide positioning."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "evidence:seasonal-operations",
+      "target": "workflow:resume",
+      "type": "supports",
+      "label": "work evidence",
+      "weight": 0.8,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "590-593",
+          "note": "Confirmed role split and responsibilities."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "workflow:resume",
+      "target": "workflow:cover-letter",
+      "type": "feeds",
+      "label": "claim boundary",
+      "weight": 0.85,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "539-544",
+          "note": "Exact resume or attachment defines claims."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "repo:portfolio",
+      "target": "workflow:github-pages",
+      "type": "published_by",
+      "label": "static Pages site",
+      "weight": 0.8,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "220-223",
+          "note": "Portfolio is a static GitHub Pages site."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "repo:job-boards",
+      "target": "workflow:github-pages",
+      "type": "published_by",
+      "label": "Pages workflow",
+      "weight": 0.85,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "697-707",
+          "note": "Job-board repos use GitHub Pages and generated public data."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "repo:job-boards",
+      "target": "risk:stale-live-state",
+      "type": "has_risk",
+      "label": "freshness drift",
+      "weight": 0.85,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "689-711",
+          "note": "Live data can lag behind repo updates."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "workflow:github-pages",
+      "target": "risk:stale-live-state",
+      "type": "detects",
+      "label": "check live endpoint",
+      "weight": 0.9,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "461-463",
+          "note": "Pages state and public output can differ."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "workflow:filesystem-triage",
+      "target": "preference:direct-proof-first",
+      "type": "uses",
+      "label": "evidence-based filtering",
+      "weight": 0.75,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "257-268",
+          "note": "Index triage needs concise evidence and extension filtering."
+        }
+      ],
+      "primary": false
+    },
+    {
+      "source": "workflow:filesystem-triage",
+      "target": "risk:stale-live-state",
+      "type": "warns_about",
+      "label": "rescan before acting",
+      "weight": 0.7,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "244-245",
+          "note": "Machine-specific folder lists should be rescanned."
+        }
+      ],
+      "primary": false
+    },
+    {
+      "source": "workflow:skill-creation",
+      "target": "tool:understand-anything",
+      "type": "uses_tool",
+      "label": "knowledge graph tooling",
+      "weight": 0.8,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "754-764",
+          "note": "Understand-Anything appears under skill and graph work."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "tool:understand-anything",
+      "target": "artifact:static-html",
+      "type": "related_to",
+      "label": "graph and export pattern",
+      "weight": 0.65,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "754-764",
+          "note": "Graph and JSON export work existed before this package."
+        }
+      ],
+      "primary": false
+    },
+    {
+      "source": "artifact:static-html",
+      "target": "preference:plain-language",
+      "type": "serves",
+      "label": "readable local output",
+      "weight": 0.75,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "938-977",
+          "note": "Local browser artifacts are a known useful output shape."
+        }
+      ],
+      "primary": false
+    },
+    {
+      "source": "preference:plain-language",
+      "target": "workflow:cover-letter",
+      "type": "shapes",
+      "label": "clear application materials",
+      "weight": 0.75,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "539-540",
+          "note": "Resume workflows should include exact instructions when needed."
+        }
+      ],
+      "primary": false
+    },
+    {
+      "source": "preference:direct-proof-first",
+      "target": "workflow:resume",
+      "type": "shapes",
+      "label": "verify files",
+      "weight": 0.85,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "547-553",
+          "note": "Resume artifacts need file-content and PDF verification."
+        }
+      ],
+      "primary": true
+    },
+    {
+      "source": "repo:personal-cafe",
+      "target": "risk:stale-live-state",
+      "type": "has_risk",
+      "label": "current code may drift",
+      "weight": 0.65,
+      "evidence": [
+        {
+          "source": "MEMORY.md",
+          "lines": "307-310",
+          "note": "Memory says to re-verify current code before assuming architecture."
+        }
+      ],
+      "primary": false
+    }
   ]
 }
