@@ -1,77 +1,141 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
   <title id="title">Codex Memory Mind Map Snapshot</title>
-  <desc id="desc">A source-backed concept map of Codex memory notes about Frank Valdez and recurring work areas.</desc>
-  <rect width="1400" height="900" fill="#f8fafc"/>
-  <text x="60" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">Codex Memory Mind Map Snapshot</text>
-  <text x="60" y="106" font-family="Arial, sans-serif" font-size="16" fill="#475569">Source scope: Codex memory only. Frozen visual export, 2026-06-24.</text>
-  <g stroke="#94a3b8" stroke-width="2" opacity="0.75">
-    <line x1="700" y1="430" x2="365" y2="175"/>
-    <line x1="700" y1="430" x2="330" y2="330"/>
-    <line x1="700" y1="430" x2="312" y2="500"/>
-    <line x1="700" y1="430" x2="420" y2="700"/>
-    <line x1="700" y1="430" x2="720" y2="155"/>
-    <line x1="700" y1="430" x2="975" y2="175"/>
-    <line x1="700" y1="430" x2="1060" y2="330"/>
-    <line x1="700" y1="430" x2="1060" y2="520"/>
-    <line x1="700" y1="430" x2="925" y2="705"/>
-    <line x1="330" y1="330" x2="365" y2="175"/>
-    <line x1="330" y1="330" x2="312" y2="500"/>
-    <line x1="720" y1="155" x2="975" y2="175"/>
-    <line x1="720" y1="155" x2="1060" y2="330"/>
-    <line x1="975" y1="175" x2="1060" y2="330"/>
-    <line x1="1060" y1="330" x2="1060" y2="520"/>
-    <line x1="312" y1="500" x2="420" y2="700"/>
-    <line x1="420" y1="700" x2="640" y2="720"/>
-    <line x1="640" y1="720" x2="925" y2="705"/>
-    <line x1="1060" y1="520" x2="925" y2="705"/>
+  <desc id="desc">A readable source-backed concept map of Codex memory notes about Frank Valdez and recurring work areas.</desc>
+  <defs>
+    <filter id="nodeShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#0f172a" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .title { font: 700 40px Arial, sans-serif; fill: #0f172a; }
+      .subtitle { font: 18px Arial, sans-serif; fill: #475569; }
+      .line { stroke: #94a3b8; stroke-width: 3; opacity: 0.68; }
+      .node { filter: url(#nodeShadow); stroke: #fff; stroke-width: 5; }
+      .plate { fill: rgba(15, 23, 42, 0.80); stroke: rgba(255, 255, 255, 0.62); stroke-width: 1.4; }
+      .label { font: 700 18px Arial, sans-serif; fill: #fff; text-anchor: middle; dominant-baseline: middle; }
+      .small { font: 14px Arial, sans-serif; fill: #334155; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1050" fill="#f8fafc"/>
+  <text x="70" y="78" class="title">Codex Memory Mind Map Snapshot</text>
+  <text x="70" y="116" class="subtitle">Source scope: Codex memory only. Frozen visual export, 2026-06-24.</text>
+
+  <g>
+    <line class="line" x1="800" y1="500" x2="300" y2="160"/>
+    <line class="line" x1="800" y1="500" x2="210" y2="360"/>
+    <line class="line" x1="800" y1="500" x2="330" y2="590"/>
+    <line class="line" x1="800" y1="500" x2="360" y2="840"/>
+    <line class="line" x1="800" y1="500" x2="780" y2="160"/>
+    <line class="line" x1="800" y1="500" x2="1140" y2="165"/>
+    <line class="line" x1="800" y1="500" x2="1325" y2="370"/>
+    <line class="line" x1="800" y1="500" x2="1300" y2="620"/>
+    <line class="line" x1="800" y1="500" x2="1110" y2="850"/>
+    <line class="line" x1="210" y1="360" x2="300" y2="160"/>
+    <line class="line" x1="330" y1="590" x2="360" y2="840"/>
+    <line class="line" x1="780" y1="160" x2="1140" y2="165"/>
+    <line class="line" x1="1140" y1="165" x2="1325" y2="370"/>
+    <line class="line" x1="1325" y1="370" x2="1300" y2="620"/>
+    <line class="line" x1="1300" y1="620" x2="1110" y2="850"/>
+    <line class="line" x1="600" y1="860" x2="360" y2="840"/>
+    <line class="line" x1="600" y1="860" x2="1110" y2="850"/>
+    <line class="line" x1="145" y1="720" x2="210" y2="360"/>
+    <line class="line" x1="940" y1="620" x2="1110" y2="850"/>
   </g>
-  <g font-family="Arial, sans-serif" font-size="15" text-anchor="middle">
-    <circle cx="700" cy="430" r="74" fill="#1d4ed8"/>
-    <text x="700" y="421" fill="#fff" font-size="18" font-weight="700">Frank</text>
-    <text x="700" y="445" fill="#dbeafe">center subject</text>
 
-    <circle cx="365" cy="175" r="56" fill="#0f766e"/>
-    <text x="365" y="168" fill="#fff" font-weight="700">Business Systems</text>
-    <text x="365" y="190" fill="#ccfbf1">career target</text>
+  <g>
+    <circle class="node" cx="800" cy="500" r="98" fill="#1d4ed8"/>
+    <rect class="plate" x="720" y="469" width="160" height="62" rx="14"/>
+    <text class="label" x="800" y="490">Frank</text>
+    <text class="label" x="800" y="514">Valdez</text>
 
-    <circle cx="330" cy="330" r="56" fill="#475569"/>
-    <text x="330" y="323" fill="#fff" font-weight="700">Preferences</text>
-    <text x="330" y="345" fill="#e2e8f0">proof + scope</text>
+    <circle class="node" cx="300" cy="160" r="82" fill="#0f766e"/>
+    <rect class="plate" x="210" y="119" width="180" height="82" rx="14"/>
+    <text class="label" x="300" y="141">Business</text>
+    <text class="label" x="300" y="165">Systems</text>
+    <text class="label" x="300" y="189">Automation</text>
 
-    <circle cx="312" cy="500" r="54" fill="#b45309"/>
-    <text x="312" y="493" fill="#fff" font-weight="700">Resume</text>
-    <text x="312" y="515" fill="#ffedd5">template + evidence</text>
+    <circle class="node" cx="210" cy="360" r="78" fill="#475569"/>
+    <rect class="plate" x="126" y="329" width="168" height="62" rx="14"/>
+    <text class="label" x="210" y="350">Preferences</text>
+    <text class="label" x="210" y="374">Proof + scope</text>
 
-    <circle cx="420" cy="700" r="52" fill="#0f766e"/>
-    <text x="420" y="693" fill="#fff" font-weight="700">Career Evidence</text>
-    <text x="420" y="715" fill="#ccfbf1">seasonal work</text>
+    <circle class="node" cx="330" cy="590" r="78" fill="#475569"/>
+    <rect class="plate" x="247" y="559" width="166" height="62" rx="14"/>
+    <text class="label" x="330" y="580">Stay in</text>
+    <text class="label" x="330" y="604">scope</text>
 
-    <circle cx="720" cy="155" r="56" fill="#7c3aed"/>
-    <text x="720" y="148" fill="#fff" font-weight="700">Portfolio</text>
-    <text x="720" y="170" fill="#ede9fe">job-search site</text>
+    <circle class="node" cx="360" cy="840" r="78" fill="#b45309"/>
+    <rect class="plate" x="276" y="809" width="168" height="62" rx="14"/>
+    <text class="label" x="360" y="830">Resume</text>
+    <text class="label" x="360" y="854">workflow</text>
 
-    <circle cx="975" cy="175" r="58" fill="#7c3aed"/>
-    <text x="975" y="168" fill="#fff" font-weight="700">personal-cafe</text>
-    <text x="975" y="190" fill="#ede9fe">product repo</text>
+    <circle class="node" cx="600" cy="860" r="72" fill="#b45309"/>
+    <rect class="plate" x="510" y="829" width="180" height="62" rx="14"/>
+    <text class="label" x="600" y="850">Cover</text>
+    <text class="label" x="600" y="874">letters</text>
 
-    <circle cx="1060" cy="330" r="56" fill="#0369a1"/>
-    <text x="1060" y="323" fill="#fff" font-weight="700">GitHub Pages</text>
-    <text x="1060" y="345" fill="#e0f2fe">live checks</text>
+    <circle class="node" cx="820" cy="860" r="76" fill="#0f766e"/>
+    <rect class="plate" x="731" y="829" width="178" height="62" rx="14"/>
+    <text class="label" x="820" y="850">Seasonal</text>
+    <text class="label" x="820" y="874">operations</text>
 
-    <circle cx="1060" cy="520" r="58" fill="#7c3aed"/>
-    <text x="1060" y="513" fill="#fff" font-weight="700">Job Boards</text>
-    <text x="1060" y="535" fill="#ede9fe">static tools</text>
+    <circle class="node" cx="780" cy="160" r="82" fill="#7c3aed"/>
+    <rect class="plate" x="698" y="129" width="164" height="62" rx="14"/>
+    <text class="label" x="780" y="150">Portfolio</text>
+    <text class="label" x="780" y="174">site</text>
 
-    <circle cx="925" cy="705" r="54" fill="#047857"/>
-    <text x="925" y="698" fill="#fff" font-weight="700">Skills</text>
-    <text x="925" y="720" fill="#dcfce7">local packages</text>
+    <circle class="node" cx="1140" cy="165" r="84" fill="#7c3aed"/>
+    <rect class="plate" x="1049" y="134" width="182" height="62" rx="14"/>
+    <text class="label" x="1140" y="155">personal-</text>
+    <text class="label" x="1140" y="179">cafe</text>
 
-    <circle cx="640" cy="720" r="48" fill="#0369a1"/>
-    <text x="640" y="713" fill="#fff" font-weight="700">HTML Artifacts</text>
-    <text x="640" y="735" fill="#e0f2fe">local reports</text>
+    <circle class="node" cx="1325" cy="370" r="82" fill="#0369a1"/>
+    <rect class="plate" x="1235" y="329" width="180" height="82" rx="14"/>
+    <text class="label" x="1325" y="351">GitHub</text>
+    <text class="label" x="1325" y="375">Pages</text>
+    <text class="label" x="1325" y="399">checks</text>
+
+    <circle class="node" cx="1300" cy="620" r="84" fill="#7c3aed"/>
+    <rect class="plate" x="1214" y="589" width="172" height="62" rx="14"/>
+    <text class="label" x="1300" y="610">Job-board</text>
+    <text class="label" x="1300" y="634">projects</text>
+
+    <circle class="node" cx="1110" cy="850" r="78" fill="#be123c"/>
+    <rect class="plate" x="1024" y="809" width="172" height="82" rx="14"/>
+    <text class="label" x="1110" y="831">Stale live</text>
+    <text class="label" x="1110" y="855">state</text>
+    <text class="label" x="1110" y="879">risk</text>
+
+    <circle class="node" cx="145" cy="720" r="78" fill="#be123c"/>
+    <rect class="plate" x="58" y="689" width="174" height="62" rx="14"/>
+    <text class="label" x="145" y="710">Filesystem</text>
+    <text class="label" x="145" y="734">triage</text>
+
+    <circle class="node" cx="940" cy="620" r="76" fill="#047857"/>
+    <rect class="plate" x="856" y="589" width="168" height="62" rx="14"/>
+    <text class="label" x="940" y="610">Skill</text>
+    <text class="label" x="940" y="634">creation</text>
+
+    <circle class="node" cx="1370" cy="850" r="78" fill="#047857"/>
+    <rect class="plate" x="1280" y="809" width="180" height="82" rx="14"/>
+    <text class="label" x="1370" y="831">Understand-</text>
+    <text class="label" x="1370" y="855">Anything</text>
+    <text class="label" x="1370" y="879">tool</text>
+
+    <circle class="node" cx="650" cy="650" r="76" fill="#0369a1"/>
+    <rect class="plate" x="562" y="619" width="176" height="62" rx="14"/>
+    <text class="label" x="650" y="640">HTML</text>
+    <text class="label" x="650" y="664">artifacts</text>
+
+    <circle class="node" cx="470" cy="335" r="78" fill="#475569"/>
+    <rect class="plate" x="382" y="294" width="176" height="82" rx="14"/>
+    <text class="label" x="470" y="316">Plain</text>
+    <text class="label" x="470" y="340">language</text>
+    <text class="label" x="470" y="364">handoff</text>
   </g>
-  <g font-family="Arial, sans-serif" font-size="13" fill="#334155">
-    <rect x="60" y="795" width="1280" height="52" rx="10" fill="#e2e8f0"/>
-    <text x="82" y="826">Sensitive raw contents are excluded. The interactive HTML contains node evidence, filters, and a report built from the same snapshot data.</text>
+
+  <g>
+    <rect x="70" y="970" width="1460" height="54" rx="12" fill="#e2e8f0"/>
+    <text x="92" y="1003" class="small">Sensitive raw contents are excluded. Labels use dark plates and larger nodes so the static image stays readable without relying on white text over pale backgrounds.</text>
   </g>
 </svg>

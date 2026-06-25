@@ -78,14 +78,15 @@
       border-radius: 8px;
     }
     .stage {
-      min-height: 660px;
-      overflow: hidden;
+      min-height: 760px;
+      overflow: auto;
       position: relative;
     }
     svg {
       display: block;
       width: 100%;
-      min-height: 660px;
+      min-width: 960px;
+      min-height: 760px;
     }
     .edge {
       stroke: #94a3b8;
@@ -94,18 +95,31 @@
     }
     .node circle {
       stroke: #fff;
-      stroke-width: 3;
-      filter: drop-shadow(0 8px 12px rgba(15, 23, 42, 0.14));
+      stroke-width: 4;
+      filter: drop-shadow(0 10px 18px rgba(15, 23, 42, 0.18));
+    }
+    .node .label-plate {
+      fill: rgba(15, 23, 42, 0.78);
+      stroke: rgba(255, 255, 255, 0.52);
+      stroke-width: 1;
     }
     .node text {
       pointer-events: none;
       fill: #fff;
-      font-size: 13px;
+      font-size: 22px;
       font-weight: 700;
       text-anchor: middle;
+      dominant-baseline: middle;
     }
-    .node.faded, .edge.faded {
+    .edge.faded {
       opacity: 0.12;
+    }
+    .node.faded circle {
+      opacity: 0.18;
+    }
+    .node.faded .label-plate,
+    .node.faded text {
+      opacity: 0.42;
     }
     .node.selected circle {
       stroke: #0f172a;
@@ -178,7 +192,7 @@
       margin-bottom: 6px;
     }
     .hidden { display: none; }
-    @media (max-width: 920px) {
+    @media (max-width: 1320px) {
       main { grid-template-columns: 1fr; }
       aside {
         position: static;
@@ -204,7 +218,7 @@
     </section>
 
     <section class="stage" aria-label="Interactive mind map">
-      <svg id="graph" viewBox="0 0 1100 720" role="img" aria-label="Clickable mind map graph"></svg>
+      <svg id="graph" viewBox="0 0 1300 840" role="img" aria-label="Clickable mind map graph"></svg>
     </section>
 
     <aside id="details" aria-live="polite"></aside>
@@ -248,7 +262,7 @@
         ["preference:direct-proof-first", "Answer first, prove it", "preference", "cluster:preferences", "Memory repeatedly says to answer the direct question first, then name the exact file, command, repo, or proof path.", "high", "normal", [["MEMORY.md", "382-385", "Feasibility and simple explanation come before implementation detail."], ["MEMORY.md", "450-453", "Runtime proof matters more than source-only checks."]]],
         ["preference:scope-discipline", "Stay in scope", "preference", "cluster:preferences", "When scope is set, avoid broad rewrites, unrelated cleanup, or extra feature work.", "high", "normal", [["MEMORY.md", "386-391", "The user distinguishes inspection, planning, and implementation."], ["MEMORY.md", "206-215", "Portfolio work was corrected when the work changed style or scope."]]],
         ["goal:business-systems-automation", "Business Systems Automation", "career_goal", "cluster:career", "The durable career target is business systems and IT automation: internal tools, operational workflows, POS/ERP systems, reporting, and process automation.", "high", "normal", [["MEMORY.md", "72-83", "Memory names the target label and fuller positioning."]]],
-        ["evidence:w-and-l-pools", "W&L Pools seasonal evidence", "career_evidence", "cluster:career", "Confirmed seasonal work evidence is split into Lifeguard summers 2013-2016 and Supervisor summers 2017-2019, with management and operations scope.", "high", "normal", [["MEMORY.md", "590-593", "The memory note gives the exact seasonal split and scope."]]],
+        ["evidence:seasonal-operations", "Seasonal operations evidence", "career_evidence", "cluster:career", "Confirmed seasonal work evidence includes lifeguard and supervisor periods, with management and operations scope.", "high", "normal", [["MEMORY.md", "590-593", "The memory note gives the exact seasonal split and scope."]]],
         ["repo:portfolio", "frankstop/Portfolio", "repo", "cluster:repos", "A job-search portfolio site. Memory says to preserve the visual shell, update content carefully, and review sections in order.", "high", "normal", [["MEMORY.md", "139-152", "Task group defines the portfolio scope and stack."], ["MEMORY.md", "204-227", "Preferences and reusable knowledge define edit style and proof paths."]]],
         ["repo:personal-cafe", "personal-cafe", "repo", "cluster:repos", "A focused product repo where memory emphasizes the permanent Documents checkout, narrow PRs, local validation, and data-source correctness.", "high", "normal", [["MEMORY.md", "307-348", "Task group covers product work, map work, manual location, and sharing."], ["MEMORY.md", "380-408", "Preferences and reusable knowledge define repo workflow."]]],
         ["repo:job-boards", "Job-board projects", "repo_family", "cluster:repos", "A group of static job-finder products and plans, including JobBoard, FindSecondJob, RemoteJob, and a planned frankstop/Jobs repo.", "high", "normal", [["MEMORY.md", "599-624", "Memory groups these as job-board and proposal work."], ["MEMORY.md", "697-713", "Reusable knowledge gives source policy, Pages, and app patterns."]]],
@@ -268,12 +282,12 @@
         ["person:frank", "workflow:resume", "uses_workflow", "resume builds", 0.9],
         ["person:frank", "repo:personal-cafe", "works_on", "product repo help", 0.85],
         ["person:frank", "repo:job-boards", "builds", "job search tools", 0.85],
-        ["person:frank", "evidence:w-and-l-pools", "has_evidence", "seasonal work proof", 0.8],
+        ["person:frank", "evidence:seasonal-operations", "has_evidence", "seasonal operations proof", 0.8],
         ["preference:direct-proof-first", "workflow:github-pages", "shapes", "runtime checks", 0.9],
         ["preference:scope-discipline", "repo:portfolio", "constrains", "preserve shell", 0.9],
         ["preference:scope-discipline", "repo:personal-cafe", "constrains", "narrow patches", 0.85],
         ["goal:business-systems-automation", "workflow:resume", "guides", "resume positioning", 0.85],
-        ["evidence:w-and-l-pools", "workflow:resume", "supports", "work evidence", 0.8],
+        ["evidence:seasonal-operations", "workflow:resume", "supports", "work evidence", 0.8],
         ["workflow:resume", "workflow:cover-letter", "feeds", "claim boundary", 0.85],
         ["repo:portfolio", "workflow:github-pages", "published_by", "static Pages site", 0.8],
         ["repo:job-boards", "workflow:github-pages", "published_by", "Pages workflow", 0.85],
@@ -291,23 +305,23 @@
     };
 
     const coords = {
-      "person:frank": [550, 350],
-      "goal:business-systems-automation": [250, 120],
-      "preference:direct-proof-first": [170, 280],
-      "preference:scope-discipline": [260, 425],
-      "workflow:resume": [260, 585],
-      "workflow:cover-letter": [455, 620],
-      "evidence:w-and-l-pools": [560, 610],
-      "repo:portfolio": [560, 105],
-      "repo:personal-cafe": [805, 125],
-      "workflow:github-pages": [920, 280],
-      "repo:job-boards": [900, 455],
-      "risk:stale-live-state": [760, 610],
-      "workflow:filesystem-triage": [130, 530],
-      "workflow:skill-creation": [705, 455],
-      "tool:understand-anything": [920, 610],
-      "artifact:static-html": [520, 500],
-      "preference:plain-language": [385, 250]
+      "person:frank": [650, 410],
+      "goal:business-systems-automation": [255, 120],
+      "preference:direct-proof-first": [170, 300],
+      "preference:scope-discipline": [275, 490],
+      "workflow:resume": [300, 700],
+      "workflow:cover-letter": [535, 725],
+      "evidence:seasonal-operations": [720, 720],
+      "repo:portfolio": [650, 115],
+      "repo:personal-cafe": [955, 130],
+      "workflow:github-pages": [1110, 310],
+      "repo:job-boards": [1090, 525],
+      "risk:stale-live-state": [930, 720],
+      "workflow:filesystem-triage": [115, 600],
+      "workflow:skill-creation": [785, 520],
+      "tool:understand-anything": [1130, 710],
+      "artifact:static-html": [610, 570],
+      "preference:plain-language": [430, 280]
     };
 
     const clusters = new Map(snapshot.clusters.map(c => [c.id, c]));
@@ -351,7 +365,7 @@
       return matches;
     }
 
-    function wrapText(label, max = 18) {
+    function wrapText(label, max = 16) {
       const words = label.split(" ");
       const lines = [];
       let line = "";
@@ -366,6 +380,14 @@
       }
       if (line) lines.push(line);
       return lines.slice(0, 3);
+    }
+
+    function labelPlateSize(lines) {
+      const longest = Math.max(...lines.map(line => line.length));
+      return {
+        width: Math.max(128, Math.min(230, longest * 12 + 36)),
+        height: lines.length * 28 + 24
+      };
     }
 
     function draw() {
@@ -395,7 +417,7 @@
         const [x, y] = coords[node.id];
         const cluster = clusters.get(node.cluster);
         const connected = edges.filter(e => e.source === node.id || e.target === node.id).length;
-        const r = node.id === "person:frank" ? 58 : 34 + Math.min(connected, 6) * 3;
+        const r = node.id === "person:frank" ? 106 : 72 + Math.min(connected, 6) * 5;
         const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
         group.setAttribute("class", `node ${shown.has(node.id) ? "" : "faded"} ${node.id === selectedId ? "selected" : ""}`);
         group.setAttribute("tabindex", "0");
@@ -421,10 +443,19 @@
         group.appendChild(circle);
 
         const lines = wrapText(node.label, node.id === "person:frank" ? 14 : 16);
+        const plate = labelPlateSize(lines);
+        const rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+        rect.setAttribute("class", "label-plate");
+        rect.setAttribute("x", x - plate.width / 2);
+        rect.setAttribute("y", y - plate.height / 2);
+        rect.setAttribute("width", plate.width);
+        rect.setAttribute("height", plate.height);
+        rect.setAttribute("rx", 16);
+        group.appendChild(rect);
         lines.forEach((lineText, index) => {
           const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
           text.setAttribute("x", x);
-          text.setAttribute("y", y - ((lines.length - 1) * 8) + index * 16);
+          text.setAttribute("y", y - ((lines.length - 1) * 14) + index * 28);
           text.textContent = lineText;
           group.appendChild(text);
         });
