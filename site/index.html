@@ -1,0 +1,481 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Codex Memory Mind Map Snapshot</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --line: #cbd5e1;
+      --soft: #e2e8f0;
+      --accent: #1d4ed8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+    }
+    header {
+      padding: 28px clamp(18px, 4vw, 44px) 16px;
+      border-bottom: 1px solid var(--line);
+      background: #fff;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+    header p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 900px;
+      line-height: 1.45;
+    }
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 18px;
+      padding: 18px clamp(18px, 4vw, 44px) 34px;
+    }
+    .toolbar {
+      grid-column: 1 / -1;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    input, select, button {
+      font: inherit;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      padding: 10px 12px;
+    }
+    input {
+      min-width: min(420px, 100%);
+      flex: 1 1 280px;
+    }
+    button {
+      cursor: pointer;
+    }
+    button.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .stage, aside, .report {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+    .stage {
+      min-height: 660px;
+      overflow: hidden;
+      position: relative;
+    }
+    svg {
+      display: block;
+      width: 100%;
+      min-height: 660px;
+    }
+    .edge {
+      stroke: #94a3b8;
+      stroke-width: 2;
+      opacity: 0.7;
+    }
+    .node circle {
+      stroke: #fff;
+      stroke-width: 3;
+      filter: drop-shadow(0 8px 12px rgba(15, 23, 42, 0.14));
+    }
+    .node text {
+      pointer-events: none;
+      fill: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      text-anchor: middle;
+    }
+    .node.faded, .edge.faded {
+      opacity: 0.12;
+    }
+    .node.selected circle {
+      stroke: #0f172a;
+      stroke-width: 4;
+    }
+    aside {
+      padding: 18px;
+      align-self: start;
+      position: sticky;
+      top: 16px;
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+    }
+    aside h2 {
+      margin: 0 0 4px;
+      font-size: 24px;
+    }
+    aside .type {
+      color: var(--muted);
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+    }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .chip {
+      border-radius: 999px;
+      background: var(--soft);
+      padding: 6px 10px;
+      font-size: 12px;
+      color: #334155;
+    }
+    .evidence {
+      padding: 0;
+      margin: 12px 0 0;
+      list-style: none;
+    }
+    .evidence li {
+      border-top: 1px solid var(--soft);
+      padding: 10px 0;
+      color: #334155;
+      line-height: 1.4;
+    }
+    .report {
+      grid-column: 1 / -1;
+      padding: 22px;
+      line-height: 1.55;
+    }
+    .report h2, .report h3 {
+      margin-top: 0;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    .mini {
+      border: 1px solid var(--soft);
+      border-radius: 8px;
+      padding: 14px;
+      background: #f8fafc;
+    }
+    .mini strong {
+      display: block;
+      margin-bottom: 6px;
+    }
+    .hidden { display: none; }
+    @media (max-width: 920px) {
+      main { grid-template-columns: 1fr; }
+      aside {
+        position: static;
+        max-height: none;
+      }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Codex Memory Mind Map Snapshot</h1>
+    <p>This is a source-backed map of Codex memory notes about Frank Valdez, recurring work areas, repo habits, career positioning, and local workflows. It is not a model-weight visualization or a literal AI brain scan.</p>
+  </header>
+
+  <main>
+    <section class="toolbar" aria-label="Map controls">
+      <input id="search" type="search" placeholder="Search topics, summaries, evidence">
+      <select id="clusterFilter" aria-label="Filter by cluster">
+        <option value="all">All clusters</option>
+      </select>
+      <button id="reset" type="button">Reset view</button>
+    </section>
+
+    <section class="stage" aria-label="Interactive mind map">
+      <svg id="graph" viewBox="0 0 1100 720" role="img" aria-label="Clickable mind map graph"></svg>
+    </section>
+
+    <aside id="details" aria-live="polite"></aside>
+
+    <section class="report">
+      <h2>Plain-English Readout</h2>
+      <p>The strongest center of gravity is practical work: build or fix something, verify it, then leave behind a usable artifact. The memory does not point to one narrow identity. It points to a person using local tools for career movement, repo cleanup, resume work, static products, and proof-based debugging.</p>
+      <div class="grid">
+        <div class="mini">
+          <strong>Career center</strong>
+          The durable label is Business Systems Automation, with a focus on internal tools, operational workflows, POS/ERP, reporting, and process automation.
+        </div>
+        <div class="mini">
+          <strong>Work style</strong>
+          The notes favor direct answers, exact evidence, current checks, and scope control. Broad rewrites get rejected when they change the goal.
+        </div>
+        <div class="mini">
+          <strong>Output pattern</strong>
+          Useful deliverables are local HTML reports, GitHub Pages sites, clean README/front-door docs, resume PDFs, JSON datasets, and verified repo patches.
+        </div>
+      </div>
+      <h3>Privacy Boundary</h3>
+      <p>The map names sensitive categories only when needed. It does not include raw personal document contents, secrets, payment data, identity document text, or API keys.</p>
+    </section>
+  </main>
+
+  <script>
+    const snapshot = {
+      clusters: [
+        { id: "cluster:profile", label: "Profile", color: "#1d4ed8" },
+        { id: "cluster:preferences", label: "Preferences", color: "#475569" },
+        { id: "cluster:career", label: "Career", color: "#0f766e" },
+        { id: "cluster:repos", label: "Repos", color: "#7c3aed" },
+        { id: "cluster:resume", label: "Resume", color: "#b45309" },
+        { id: "cluster:computer", label: "Computer", color: "#be123c" },
+        { id: "cluster:skills", label: "Skills", color: "#047857" },
+        { id: "cluster:artifacts", label: "Artifacts", color: "#0369a1" }
+      ],
+      nodes: [
+        ["person:frank", "Frank Valdez", "person", "cluster:profile", "The central subject of the local Codex memory snapshot. The notes center on practical work, career positioning, repo maintenance, resumes, and local artifacts.", "high", "normal", [["MEMORY.md", "474-477", "Resume workflow is explicitly tied to Frank Valdez."], ["MEMORY.md", "570-573", "Career support notes are tied to the user's evidence and goals."]]],
+        ["preference:direct-proof-first", "Answer first, prove it", "preference", "cluster:preferences", "Memory repeatedly says to answer the direct question first, then name the exact file, command, repo, or proof path.", "high", "normal", [["MEMORY.md", "382-385", "Feasibility and simple explanation come before implementation detail."], ["MEMORY.md", "450-453", "Runtime proof matters more than source-only checks."]]],
+        ["preference:scope-discipline", "Stay in scope", "preference", "cluster:preferences", "When scope is set, avoid broad rewrites, unrelated cleanup, or extra feature work.", "high", "normal", [["MEMORY.md", "386-391", "The user distinguishes inspection, planning, and implementation."], ["MEMORY.md", "206-215", "Portfolio work was corrected when the work changed style or scope."]]],
+        ["goal:business-systems-automation", "Business Systems Automation", "career_goal", "cluster:career", "The durable career target is business systems and IT automation: internal tools, operational workflows, POS/ERP systems, reporting, and process automation.", "high", "normal", [["MEMORY.md", "72-83", "Memory names the target label and fuller positioning."]]],
+        ["evidence:w-and-l-pools", "W&L Pools seasonal evidence", "career_evidence", "cluster:career", "Confirmed seasonal work evidence is split into Lifeguard summers 2013-2016 and Supervisor summers 2017-2019, with management and operations scope.", "high", "normal", [["MEMORY.md", "590-593", "The memory note gives the exact seasonal split and scope."]]],
+        ["repo:portfolio", "frankstop/Portfolio", "repo", "cluster:repos", "A job-search portfolio site. Memory says to preserve the visual shell, update content carefully, and review sections in order.", "high", "normal", [["MEMORY.md", "139-152", "Task group defines the portfolio scope and stack."], ["MEMORY.md", "204-227", "Preferences and reusable knowledge define edit style and proof paths."]]],
+        ["repo:personal-cafe", "personal-cafe", "repo", "cluster:repos", "A focused product repo where memory emphasizes the permanent Documents checkout, narrow PRs, local validation, and data-source correctness.", "high", "normal", [["MEMORY.md", "307-348", "Task group covers product work, map work, manual location, and sharing."], ["MEMORY.md", "380-408", "Preferences and reusable knowledge define repo workflow."]]],
+        ["repo:job-boards", "Job-board projects", "repo_family", "cluster:repos", "A group of static job-finder products and plans, including JobBoard, FindSecondJob, RemoteJob, and a planned frankstop/Jobs repo.", "high", "normal", [["MEMORY.md", "599-624", "Memory groups these as job-board and proposal work."], ["MEMORY.md", "697-713", "Reusable knowledge gives source policy, Pages, and app patterns."]]],
+        ["workflow:github-pages", "GitHub Pages publishing", "workflow", "cluster:repos", "Publishing work often needs live endpoint checks, Pages API checks, cache-busted fetches, and branch/source verification.", "high", "normal", [["MEMORY.md", "423-463", "Repo init and Pages enablement notes define the workflow."], ["MEMORY.md", "689-711", "Job-board notes show repo-vs-live verification patterns."]]],
+        ["workflow:resume", "Resume workflow", "workflow", "cluster:resume", "Resume work centers on template fidelity, one-page PDF verification, dated folders, notes files, and exact claim boundaries.", "high", "normal", [["MEMORY.md", "474-489", "Task group defines resume workflow scope."], ["MEMORY.md", "532-553", "Preferences define filenames, templates, page-count checks, and evidence handling."]]],
+        ["workflow:cover-letter", "Requirement-first cover letters", "workflow", "cluster:resume", "Cover letters are judged against posting instructions first, and claims stay inside the evidence shown by the selected resume or source material.", "high", "normal", [["MEMORY.md", "491-500", "Memory frames cover-letter judgment around requirements."], ["MEMORY.md", "539-544", "Preferences enforce claim boundaries and attachment-specific evidence."]]],
+        ["workflow:filesystem-triage", "Filesystem triage", "workflow", "cluster:computer", "Large local indexes should be searched and filtered for useful documents/work while excluding system, app, game, and dependency noise.", "high", "sensitive-category", [["MEMORY.md", "242-268", "Memory describes tree.txt triage and privacy-sensitive document categories."]]],
+        ["workflow:skill-creation", "Skill creation and validation", "workflow", "cluster:skills", "Local skill work includes broad trigger descriptions, validation, package layout, and careful separation between clarification and implementation.", "high", "normal", [["MEMORY.md", "735-764", "Task group covers local skills, Understand-Anything, indexing, and exports."], ["MEMORY.md", "776-793", "Preferences and reusable knowledge define skill workflow rules."]]],
+        ["tool:understand-anything", "Understand-Anything", "tool", "cluster:skills", "An installed knowledge-graph plugin suite previously used for repo analysis, skill indexing, and JSON export work.", "high", "normal", [["MEMORY.md", "754-764", "Memory names install, knowledge graph, direct links, and JSON export work."], ["MEMORY.md", "790-791", "Memory describes it as a plugin suite and notes direct filesystem indexes."]]],
+        ["artifact:static-html", "Static HTML artifacts", "artifact_pattern", "cluster:artifacts", "A recurring output pattern: browser-openable HTML tools or reports with simple local state when needed.", "high", "normal", [["MEMORY.md", "938-953", "Memory describes static presentation and local HTML artifacts."], ["MEMORY.md", "967-977", "Memory says local HTML plus localStorage can be enough for quick tools."]]],
+        ["preference:plain-language", "Plain-language handoff", "preference", "cluster:preferences", "Explanations should be usable by a non-expert and ready to send or act on when needed.", "high", "normal", [["MEMORY.md", "384-385", "Memory says to summarize in plain language for recipient-facing notes."], ["MEMORY.md", "539-540", "Resume workflow notes call for exact, step-by-step instructions when needed."]]],
+        ["risk:stale-live-state", "Stale live state risk", "risk", "cluster:repos", "Live sites, job data, Pages deploys, and repo state can drift, so current checks are needed before treating memory as current truth.", "high", "normal", [["MEMORY.md", "461-463", "Pages can be enabled while the public site still lags."], ["MEMORY.md", "689-711", "RemoteJob memory stresses live endpoint checks over source timestamps alone."]]]
+      ],
+      edges: [
+        ["person:frank", "goal:business-systems-automation", "aims_at", "career positioning", 0.95],
+        ["person:frank", "repo:portfolio", "owns_public_artifact", "job-search portfolio", 0.9],
+        ["person:frank", "workflow:resume", "uses_workflow", "resume builds", 0.9],
+        ["person:frank", "repo:personal-cafe", "works_on", "product repo help", 0.85],
+        ["person:frank", "repo:job-boards", "builds", "job search tools", 0.85],
+        ["person:frank", "evidence:w-and-l-pools", "has_evidence", "seasonal work proof", 0.8],
+        ["preference:direct-proof-first", "workflow:github-pages", "shapes", "runtime checks", 0.9],
+        ["preference:scope-discipline", "repo:portfolio", "constrains", "preserve shell", 0.9],
+        ["preference:scope-discipline", "repo:personal-cafe", "constrains", "narrow patches", 0.85],
+        ["goal:business-systems-automation", "workflow:resume", "guides", "resume positioning", 0.85],
+        ["evidence:w-and-l-pools", "workflow:resume", "supports", "work evidence", 0.8],
+        ["workflow:resume", "workflow:cover-letter", "feeds", "claim boundary", 0.85],
+        ["repo:portfolio", "workflow:github-pages", "published_by", "static Pages site", 0.8],
+        ["repo:job-boards", "workflow:github-pages", "published_by", "Pages workflow", 0.85],
+        ["repo:job-boards", "risk:stale-live-state", "has_risk", "freshness drift", 0.85],
+        ["workflow:github-pages", "risk:stale-live-state", "detects", "check live endpoint", 0.9],
+        ["workflow:filesystem-triage", "preference:direct-proof-first", "uses", "evidence-based filtering", 0.75],
+        ["workflow:filesystem-triage", "risk:stale-live-state", "warns_about", "rescan before acting", 0.7],
+        ["workflow:skill-creation", "tool:understand-anything", "uses_tool", "knowledge graph tooling", 0.8],
+        ["tool:understand-anything", "artifact:static-html", "related_to", "graph and export pattern", 0.65],
+        ["artifact:static-html", "preference:plain-language", "serves", "readable local output", 0.75],
+        ["preference:plain-language", "workflow:cover-letter", "shapes", "clear application materials", 0.75],
+        ["preference:direct-proof-first", "workflow:resume", "shapes", "verify files", 0.85],
+        ["repo:personal-cafe", "risk:stale-live-state", "has_risk", "current code may drift", 0.65]
+      ]
+    };
+
+    const coords = {
+      "person:frank": [550, 350],
+      "goal:business-systems-automation": [250, 120],
+      "preference:direct-proof-first": [170, 280],
+      "preference:scope-discipline": [260, 425],
+      "workflow:resume": [260, 585],
+      "workflow:cover-letter": [455, 620],
+      "evidence:w-and-l-pools": [560, 610],
+      "repo:portfolio": [560, 105],
+      "repo:personal-cafe": [805, 125],
+      "workflow:github-pages": [920, 280],
+      "repo:job-boards": [900, 455],
+      "risk:stale-live-state": [760, 610],
+      "workflow:filesystem-triage": [130, 530],
+      "workflow:skill-creation": [705, 455],
+      "tool:understand-anything": [920, 610],
+      "artifact:static-html": [520, 500],
+      "preference:plain-language": [385, 250]
+    };
+
+    const clusters = new Map(snapshot.clusters.map(c => [c.id, c]));
+    const nodes = snapshot.nodes.map(row => ({
+      id: row[0], label: row[1], type: row[2], cluster: row[3], summary: row[4],
+      confidence: row[5], privacyLevel: row[6],
+      evidence: row[7].map(e => ({ source: e[0], lines: e[1], note: e[2] }))
+    }));
+    const nodeById = new Map(nodes.map(node => [node.id, node]));
+    const edges = snapshot.edges.map(row => ({
+      source: row[0], target: row[1], type: row[2], label: row[3], weight: row[4]
+    }));
+
+    const graph = document.querySelector("#graph");
+    const details = document.querySelector("#details");
+    const search = document.querySelector("#search");
+    const clusterFilter = document.querySelector("#clusterFilter");
+    const reset = document.querySelector("#reset");
+    let selectedId = "person:frank";
+
+    for (const cluster of snapshot.clusters) {
+      const option = document.createElement("option");
+      option.value = cluster.id;
+      option.textContent = cluster.label;
+      clusterFilter.appendChild(option);
+    }
+
+    function visibleNodeIds() {
+      const q = search.value.trim().toLowerCase();
+      const cluster = clusterFilter.value;
+      const matches = new Set();
+      for (const node of nodes) {
+        const haystack = [
+          node.label, node.type, node.summary, node.privacyLevel,
+          ...node.evidence.flatMap(e => [e.source, e.lines, e.note])
+        ].join(" ").toLowerCase();
+        const clusterOk = cluster === "all" || node.cluster === cluster;
+        const queryOk = !q || haystack.includes(q);
+        if (clusterOk && queryOk) matches.add(node.id);
+      }
+      return matches;
+    }
+
+    function wrapText(label, max = 18) {
+      const words = label.split(" ");
+      const lines = [];
+      let line = "";
+      for (const word of words) {
+        const next = line ? `${line} ${word}` : word;
+        if (next.length > max && line) {
+          lines.push(line);
+          line = word;
+        } else {
+          line = next;
+        }
+      }
+      if (line) lines.push(line);
+      return lines.slice(0, 3);
+    }
+
+    function draw() {
+      graph.innerHTML = "";
+      const shown = visibleNodeIds();
+      const selected = nodeById.get(selectedId) || nodes[0];
+      if (!shown.has(selected.id)) selectedId = [...shown][0] || nodes[0].id;
+
+      const edgeLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      graph.appendChild(edgeLayer);
+      for (const edge of edges) {
+        const a = coords[edge.source];
+        const b = coords[edge.target];
+        if (!a || !b) continue;
+        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+        line.setAttribute("x1", a[0]);
+        line.setAttribute("y1", a[1]);
+        line.setAttribute("x2", b[0]);
+        line.setAttribute("y2", b[1]);
+        line.setAttribute("class", `edge ${shown.has(edge.source) && shown.has(edge.target) ? "" : "faded"}`);
+        edgeLayer.appendChild(line);
+      }
+
+      const nodeLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
+      graph.appendChild(nodeLayer);
+      for (const node of nodes) {
+        const [x, y] = coords[node.id];
+        const cluster = clusters.get(node.cluster);
+        const connected = edges.filter(e => e.source === node.id || e.target === node.id).length;
+        const r = node.id === "person:frank" ? 58 : 34 + Math.min(connected, 6) * 3;
+        const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+        group.setAttribute("class", `node ${shown.has(node.id) ? "" : "faded"} ${node.id === selectedId ? "selected" : ""}`);
+        group.setAttribute("tabindex", "0");
+        group.setAttribute("role", "button");
+        group.setAttribute("aria-label", node.label);
+        group.style.cursor = "pointer";
+        group.addEventListener("click", () => {
+          selectedId = node.id;
+          draw();
+        });
+        group.addEventListener("keydown", event => {
+          if (event.key === "Enter" || event.key === " ") {
+            selectedId = node.id;
+            draw();
+          }
+        });
+
+        const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        circle.setAttribute("cx", x);
+        circle.setAttribute("cy", y);
+        circle.setAttribute("r", r);
+        circle.setAttribute("fill", cluster.color);
+        group.appendChild(circle);
+
+        const lines = wrapText(node.label, node.id === "person:frank" ? 14 : 16);
+        lines.forEach((lineText, index) => {
+          const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+          text.setAttribute("x", x);
+          text.setAttribute("y", y - ((lines.length - 1) * 8) + index * 16);
+          text.textContent = lineText;
+          group.appendChild(text);
+        });
+        nodeLayer.appendChild(group);
+      }
+
+      renderDetails(nodeById.get(selectedId));
+    }
+
+    function renderDetails(node) {
+      const cluster = clusters.get(node.cluster);
+      const related = edges
+        .filter(edge => edge.source === node.id || edge.target === node.id)
+        .map(edge => {
+          const other = nodeById.get(edge.source === node.id ? edge.target : edge.source);
+          return `${edge.label}: ${other ? other.label : "Unknown"}`;
+        });
+      details.innerHTML = `
+        <h2>${escapeHtml(node.label)}</h2>
+        <div class="type">${escapeHtml(node.type.replaceAll("_", " "))}</div>
+        <p>${escapeHtml(node.summary)}</p>
+        <div class="chip-row">
+          <span class="chip">${escapeHtml(cluster.label)}</span>
+          <span class="chip">confidence: ${escapeHtml(node.confidence)}</span>
+          <span class="chip">privacy: ${escapeHtml(node.privacyLevel)}</span>
+        </div>
+        <h3>Connected To</h3>
+        <ul class="evidence">${related.map(item => `<li>${escapeHtml(item)}</li>`).join("") || "<li>No visible links.</li>"}</ul>
+        <h3>Evidence</h3>
+        <ul class="evidence">
+          ${node.evidence.map(e => `<li><strong>${escapeHtml(e.source)}:${escapeHtml(e.lines)}</strong><br>${escapeHtml(e.note)}</li>`).join("")}
+        </ul>
+      `;
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, char => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      }[char]));
+    }
+
+    search.addEventListener("input", draw);
+    clusterFilter.addEventListener("change", draw);
+    reset.addEventListener("click", () => {
+      search.value = "";
+      clusterFilter.value = "all";
+      selectedId = "person:frank";
+      draw();
+    });
+
+    draw();
+  </script>
+</body>
+</html>

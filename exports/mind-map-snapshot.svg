@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Codex Memory Mind Map Snapshot</title>
+  <desc id="desc">A source-backed concept map of Codex memory notes about Frank Valdez and recurring work areas.</desc>
+  <rect width="1400" height="900" fill="#f8fafc"/>
+  <text x="60" y="70" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#0f172a">Codex Memory Mind Map Snapshot</text>
+  <text x="60" y="106" font-family="Arial, sans-serif" font-size="16" fill="#475569">Source scope: Codex memory only. Frozen visual export, 2026-06-24.</text>
+  <g stroke="#94a3b8" stroke-width="2" opacity="0.75">
+    <line x1="700" y1="430" x2="365" y2="175"/>
+    <line x1="700" y1="430" x2="330" y2="330"/>
+    <line x1="700" y1="430" x2="312" y2="500"/>
+    <line x1="700" y1="430" x2="420" y2="700"/>
+    <line x1="700" y1="430" x2="720" y2="155"/>
+    <line x1="700" y1="430" x2="975" y2="175"/>
+    <line x1="700" y1="430" x2="1060" y2="330"/>
+    <line x1="700" y1="430" x2="1060" y2="520"/>
+    <line x1="700" y1="430" x2="925" y2="705"/>
+    <line x1="330" y1="330" x2="365" y2="175"/>
+    <line x1="330" y1="330" x2="312" y2="500"/>
+    <line x1="720" y1="155" x2="975" y2="175"/>
+    <line x1="720" y1="155" x2="1060" y2="330"/>
+    <line x1="975" y1="175" x2="1060" y2="330"/>
+    <line x1="1060" y1="330" x2="1060" y2="520"/>
+    <line x1="312" y1="500" x2="420" y2="700"/>
+    <line x1="420" y1="700" x2="640" y2="720"/>
+    <line x1="640" y1="720" x2="925" y2="705"/>
+    <line x1="1060" y1="520" x2="925" y2="705"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="15" text-anchor="middle">
+    <circle cx="700" cy="430" r="74" fill="#1d4ed8"/>
+    <text x="700" y="421" fill="#fff" font-size="18" font-weight="700">Frank</text>
+    <text x="700" y="445" fill="#dbeafe">center subject</text>
+
+    <circle cx="365" cy="175" r="56" fill="#0f766e"/>
+    <text x="365" y="168" fill="#fff" font-weight="700">Business Systems</text>
+    <text x="365" y="190" fill="#ccfbf1">career target</text>
+
+    <circle cx="330" cy="330" r="56" fill="#475569"/>
+    <text x="330" y="323" fill="#fff" font-weight="700">Preferences</text>
+    <text x="330" y="345" fill="#e2e8f0">proof + scope</text>
+
+    <circle cx="312" cy="500" r="54" fill="#b45309"/>
+    <text x="312" y="493" fill="#fff" font-weight="700">Resume</text>
+    <text x="312" y="515" fill="#ffedd5">template + evidence</text>
+
+    <circle cx="420" cy="700" r="52" fill="#0f766e"/>
+    <text x="420" y="693" fill="#fff" font-weight="700">Career Evidence</text>
+    <text x="420" y="715" fill="#ccfbf1">seasonal work</text>
+
+    <circle cx="720" cy="155" r="56" fill="#7c3aed"/>
+    <text x="720" y="148" fill="#fff" font-weight="700">Portfolio</text>
+    <text x="720" y="170" fill="#ede9fe">job-search site</text>
+
+    <circle cx="975" cy="175" r="58" fill="#7c3aed"/>
+    <text x="975" y="168" fill="#fff" font-weight="700">personal-cafe</text>
+    <text x="975" y="190" fill="#ede9fe">product repo</text>
+
+    <circle cx="1060" cy="330" r="56" fill="#0369a1"/>
+    <text x="1060" y="323" fill="#fff" font-weight="700">GitHub Pages</text>
+    <text x="1060" y="345" fill="#e0f2fe">live checks</text>
+
+    <circle cx="1060" cy="520" r="58" fill="#7c3aed"/>
+    <text x="1060" y="513" fill="#fff" font-weight="700">Job Boards</text>
+    <text x="1060" y="535" fill="#ede9fe">static tools</text>
+
+    <circle cx="925" cy="705" r="54" fill="#047857"/>
+    <text x="925" y="698" fill="#fff" font-weight="700">Skills</text>
+    <text x="925" y="720" fill="#dcfce7">local packages</text>
+
+    <circle cx="640" cy="720" r="48" fill="#0369a1"/>
+    <text x="640" y="713" fill="#fff" font-weight="700">HTML Artifacts</text>
+    <text x="640" y="735" fill="#e0f2fe">local reports</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="13" fill="#334155">
+    <rect x="60" y="795" width="1280" height="52" rx="10" fill="#e2e8f0"/>
+    <text x="82" y="826">Sensitive raw contents are excluded. The interactive HTML contains node evidence, filters, and a report built from the same snapshot data.</text>
+  </g>
+</svg>
